@@ -1,0 +1,29 @@
+
+
+  <div style="align-content:center; border:thin"  class="col-3">
+    <H3 style="text-align: left; color: seagreen;" >Create Book</H3>
+    <label  class="form-label">bookName</label>
+    <input type="text" [(ngModel)] = bookDetails.bookName class="form-control"placeholder="Name of the Book">
+   
+    <label class="form-label">Category</label>
+    <input type="text" [(ngModel)] = bookDetails.category class="form-control"  placeholder="category of the Book">
+ 
+    <label class="form-label">Logo</label>
+    <input type="text" [(ngModel)] = bookDetails.logo class="form-control"  placeholder="image of the Book">
+ 
+    <label class="form-label">Price</label>
+    <input type= "number" [(ngModel)] = bookDetails.price class="form-control"  placeholder="price of the Book">
+
+    <label  class="form-label">publisher</label>
+    <input type="text" [(ngModel)] = bookDetails.publisher class="form-control"  placeholder="Publisher of the Book">
+ 
+    <label  class="form-label">status</label>
+    <input type="text" [(ngModel)] = bookDetails.status class="form-control"  placeholder="status of the Book">
+    
+    <label class="form-label">content</label>
+    <input type="text"  [(ngModel)] = bookDetails.content class="form-control"  placeholder="content of the Book">
+    <button type="button" class="btn btn-success" (click)="save()">SaveBook</button>
+</div>
+
+
+

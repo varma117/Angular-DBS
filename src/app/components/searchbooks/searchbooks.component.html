@@ -1,0 +1,15 @@
+
+<div style="text-align: left;">
+    <h3 style="color: teal;">SearchBook</h3>
+
+    <label class="form-label">Auther</label>
+    <input type="text" [(ngModel)]=booksDetails.category class="form-control"  placeholder="Name of the author">
+
+    <label class="form-label">Category</label>
+    <input type="text"  [(ngModel)]=booksDetails.price class="form-control"  placeholder="type of book">
+
+    <label class="form-label">Price</label>
+    <input type="number"  [(ngModel)]=booksDetails.authorName class="form-control"  placeholder="enter price">
+    <button (click)="getBooks(booksDetails)">Search</button>
+    </div>
+    
