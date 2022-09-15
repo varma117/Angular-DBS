@@ -33,7 +33,6 @@ export class CreatebookComponent implements OnInit {
     logo:"",
     price:0,
     publisher :"",
-    publishedDate:Date,
     status:true,
     content:""
 

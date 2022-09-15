@@ -1,1 +1,51 @@
-<p>editbook works!</p>
+
+
+<div style="align-content:center; border:thin"  class="col-3">
+    <H3 style="text-align: left; color: seagreen;" >Update Book</H3>
+    <label  class="form-label">bookName</label>
+    <input type="text" [(ngModel)] = book.bookName class="form-control"placeholder="Name of the Book">
+   
+   <label class="form-label">AuthorName</label>
+    <input type="text" [(ngModel)] = book.authorName class="form-control"placeholder="Name of the Author">
+
+    <label class="form-label">Category</label>
+    <input type="text" [(ngModel)] = book.category class="form-control"  placeholder="category of the Book">
+ 
+    <label class="form-label">Logo</label>
+    <input type="text" [(ngModel)] = book.logo class="form-control"  placeholder="image of the Book">
+ 
+    <label class="form-label">Price</label>
+    <input type= "number" [(ngModel)] = book.price class="form-control"  placeholder="price of the Book">
+
+    <label  class="form-label">publisher</label>
+    <input type="text" [(ngModel)] = book.publisher class="form-control"  placeholder="Publisher of the Book">
+ 
+    <label  class="form-label">status</label>
+    <input type="text" [(ngModel)] = book.status class="form-control"  placeholder="status of the Book">
+    
+    <label class="form-label">content</label>
+    <input type="text"  [(ngModel)] = book.content class="form-control"  placeholder="content of the Book">
+    <button type="button" class="btn btn-success" (click)="update(book)">updatebook</button>
+</div>
+
+<ol class="list-group list-group-numbered">
+    <li  *ngFor='let b of books index as i ' class="list-group-item">
+      <span>{{b.bookName}}</span>
+      <br>
+      <span>{{b.authorName}}</span>
+      <br>
+      <span>{{b.category}}</span>
+      <br>
+      <span>{{b.logo}}</span>
+      <br>
+      <span>{{b.price}}</span>
+      <br>
+      <span>{{b.publisher}}</span>
+      <br>
+      <span>{{b.status}}</span>
+      <br>
+      <span>{{b.content}}</span>
+      <br>
+      <button type="button" (click)="updateBook(b, i)" style="margin-right: 500;" class="btn btn-danger">EditBook</button>
+    </li> 
+  </ol>

@@ -3,7 +3,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 const Base_URL= "http://localhost:8088/digitalbooks/createbook";
-const Get_URL = "http://localhost:8089/reader/getbook/{category}/{price}/{authorName}";
+const Get_URL = "http://localhost:8089/reader/getbook/";
+const Get_URL1 = "http://localhost:8089/reader/getallbooks";
+const Get_URL2 = "http://localhost:8088/digitalbooks/getallbooks";
+const put_url = "http://localhost:8088/digitalbooks/editbook/";
 
 @Injectable({
     providedIn: 'root'
@@ -25,12 +28,19 @@ const Get_URL = "http://localhost:8089/reader/getbook/{category}/{price}/{author
         
       }
 
-getBook(book:any){
-    return this.http.get(Get_URL);
+getBook(book:{
+    authorName:string;    
+    price:number;
+    category:string;})
+    {
+    return this.http.get(Get_URL+book.category+"/"+book.price+"/"+book.authorName);
  }
-// getBook(){
-//     return this.http.get(Get_URL);
-// }
+getBooks(){
+    return this.http.get(Get_URL2);
+}
+editBook(book,id){
+return this.http.put(put_url+id,book);
+}
 
       constructor(public http: HttpClient){
 

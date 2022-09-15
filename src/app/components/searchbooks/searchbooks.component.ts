@@ -12,13 +12,14 @@ export class SearchbooksComponent implements OnInit {
 
 book: Book = new Book();
 books: Book[]=[];
+
 booksDetails={
   authorName:"",  
   category:"",
   price:0
 }
-getBooks(booksDetails:any){
-const observable = this.bookService.getBook(this.booksDetails);
+getBooks(){
+const observable = this.bookService.getBooks();
 observable.subscribe(
   (response :any)=>{
     console.log(response);
@@ -34,7 +35,7 @@ observable.subscribe(
   constructor(public bookService:BookService) { }
 
   ngOnInit(): void {
-const promise = this.bookService.getBook(this.booksDetails);
+const promise = this.bookService.getBooks();
 promise.subscribe(
   (response)=>{
     console.log(response);

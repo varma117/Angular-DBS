@@ -2,14 +2,38 @@
 <div style="text-align: left;">
     <h3 style="color: teal;">SearchBook</h3>
 
-    <label class="form-label">Auther</label>
+    <label class="form-label">Category</label>
     <input type="text" [(ngModel)]=booksDetails.category class="form-control"  placeholder="Name of the author">
 
-    <label class="form-label">Category</label>
+    <label class="form-label">Price</label>
     <input type="text"  [(ngModel)]=booksDetails.price class="form-control"  placeholder="type of book">
 
-    <label class="form-label">Price</label>
+    <label class="form-label">Auther</label>
     <input type="number"  [(ngModel)]=booksDetails.authorName class="form-control"  placeholder="enter price">
-    <button (click)="getBooks(booksDetails)">Search</button>
+    <button (click)="getBooks()">Search</button>
     </div>
-    
+    <ol class="list-group list-group-numbered">
+        <li  *ngFor='let u of books; index as i ' class="list-group-item">
+         
+         <br>
+         <span>Logo: </span>
+         <span>{{u.logo}}</span>
+         <br> 
+         <span>Auther: </span>
+         <span>{{u.authorName}}</span>
+          <br>
+          <span>BookName: </span>
+          <span>{{u.bookName}}</span>
+          <br>
+          <span>category: </span>
+          <span>{{u.category}}</span>
+          <br>
+          <span>Cost: </span>
+          <span>{{u.price}}</span>
+          <br>
+          <span>publisher: </span>
+          <span>{{u.publisher}}</span>
+          <br>
+          <button type="button" (click)="getBooks()" style="margin-right: 500;" class="btn btn-danger">Buy</button>
+        </li> 
+      </ol>
